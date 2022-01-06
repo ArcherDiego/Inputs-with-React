@@ -1,13 +1,13 @@
-const Input = ({id, name, value, setValue, ...props }) => {
+const Input = ({id, name, value, setValue, type, ...props }) => {
 
     const handleChange = ({target}) => {
-        return setValue(target.value)
+        setValue(target.value)
     }
 
     return (
         <>
             <label htmlFor={ id }>{ name }</label>
-            <input id={ id } name={ id } type="text" onChange={ handleChange } {...props} />
+            <input id={ id } name={ id } type={ type } onChange={ handleChange } {...props} />
         </>
     )
 }
