@@ -1,13 +1,12 @@
-const Select = ({ option, value, setValue, templete, ...props }) => {
+const Select = ({ option, value, setValue, template, ...props }) => {
 
     const handleChange = ({target}) => {
         setValue(target.value)
-        console.log('koé')
     }
 
     return (
-        <select value={ value } onChange={ handleChange } { ...props } >
-            <option value={ templete } disabled>{ templete }</option>
+        <select defaultValue={ template } onChange={ handleChange } { ...props } >
+            <option value={ template } disabled>{ template }</option>
             {option.map((option, index) => (<option key={ index } value={ option }>{ option }</option>))}
         </select>
     )

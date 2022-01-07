@@ -9,14 +9,19 @@ const Radio = ({ option, question, value, setValue, ...props }) => {
            <fieldset>
                 <legend>{ question }</legend>
                     {option.map((option, index) => (
-                    <input 
+                    <>
+                    <label>
+                        <input 
                             key={ index } 
                             type="radio" 
                             value={ option }
                             checked={ value === option } 
                             onChange={ handleChange }
                             {...props}
-                    />))
+                        />
+                        { option }
+                    </label>
+                    </>))
                     }
            </fieldset>
         </>

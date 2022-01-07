@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./components/Button/Button"
+import Checkbox from "./components/Form/Checkbox/Checkbox";
 import Input from "./components/Form/Input/Input";
 import Radio from "./components/Form/Radio/Radio";
 import Select from "./components/Form/Select/Select";
@@ -42,7 +43,7 @@ const App = () => {
         />
         <br />
         <Select
-          templete={ 'Sexo' }
+          template={ 'Sexo' }
           option={ ['Masculino', 'Feminino', 'Outro'] }
           value={ select }
           setValue={ setSelect }
@@ -51,12 +52,13 @@ const App = () => {
         <br />
         <Button name={ 'Iniciar' } />
         <Radio 
-          question={ "koé?" } 
-          option={ ['Sim', 'Não'] }
+          question={ "Você aceita os termos de serviço?" } 
+          option={ ['Sim, aceito', 'Não'] }
           value={ terms }
           setValue={ setTerms }
           required
         />
+        <Checkbox />
       </form>
     </>
   );
