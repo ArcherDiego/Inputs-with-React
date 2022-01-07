@@ -1,3 +1,5 @@
+import StyledInput from "./style"
+
 const Input = ({id, name, value, setValue, type, ...props }) => {
 
     const handleChange = ({target}) => {
@@ -5,10 +7,10 @@ const Input = ({id, name, value, setValue, type, ...props }) => {
     }
 
     return (
-        <>
+        <StyledInput>
             <label htmlFor={ id }>{ name }</label>
             <input id={ id } name={ id } type={ type } onChange={ handleChange } {...props} />
-        </>
+        </StyledInput>
     )
 }
 

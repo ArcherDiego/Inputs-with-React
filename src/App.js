@@ -4,19 +4,27 @@ import Checkbox from "./components/Form/Checkbox/Checkbox";
 import Input from "./components/Form/Input/Input";
 import Radio from "./components/Form/Radio/Radio";
 import Select from "./components/Form/Select/Select";
+import styled from "styled-components";
 
 const App = () => {
+
+  const Titulo = styled.h2`
+    text-align: center;
+    font-size: 2em;
+  `;
 
   const [ name, setName ] = React.useState('')
   const [ email, setEmail ] = React.useState('')
   const [ phone, setPhone ] = React.useState('')
   const [ select, setSelect ] = React.useState('')
   const [ terms, setTerms ] = React.useState('')
+  const [ position, setPosition ] = React.useState([])
 
   return (
     <>
+      <div></div>
       <form>
-        <h2>Questionário</h2>
+        <Titulo>Questionário</Titulo>
         <Input
           id="Nome" 
           name="Nome: " 
@@ -41,7 +49,6 @@ const App = () => {
           type={ 'number' }
           placeholder="(Opcional)" 
         />
-        <br />
         <Select
           template={ 'Sexo' }
           option={ ['Masculino', 'Feminino', 'Outro'] }
@@ -49,16 +56,19 @@ const App = () => {
           setValue={ setSelect }
           required
         />
-        <br />
-        <Button name={ 'Iniciar' } />
+        <Checkbox 
+          name={ ['Levantador', 'Ponteiro', 'Central', 'Oposto', 'Libero'] }
+          value={ position }
+          setValue={ setPosition }
+        />
         <Radio 
           question={ "Você aceita os termos de serviço?" } 
-          option={ ['Sim, aceito', 'Não'] }
+          option={ ['Sim, aceito', 'Não, não aceito'] }
           value={ terms }
           setValue={ setTerms }
           required
         />
-        <Checkbox />
+        <Button name={ 'Pronto' } />
       </form>
     </>
   );

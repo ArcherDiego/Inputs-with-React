@@ -1,3 +1,5 @@
+import StyledRadio from "./style"
+
 const Radio = ({ option, question, value, setValue, ...props }) => {
 
     const handleChange = ({target}) => {
@@ -5,7 +7,7 @@ const Radio = ({ option, question, value, setValue, ...props }) => {
     }
 
     return(
-        <>
+        <StyledRadio>
            <fieldset>
                 <legend>{ question }</legend>
                     {option.map((option, index) => (
@@ -24,7 +26,7 @@ const Radio = ({ option, question, value, setValue, ...props }) => {
                     </>))
                     }
            </fieldset>
-        </>
+        </StyledRadio>
         )
 }
 
