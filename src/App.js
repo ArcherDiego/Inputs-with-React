@@ -22,7 +22,6 @@ const App = () => {
 
   return (
     <>
-      <div></div>
       <form>
         <Titulo>Questionário</Titulo>
         <Input
@@ -57,7 +56,6 @@ const App = () => {
           required
         />
         <Checkbox 
-          name={ ['Levantador', 'Ponteiro', 'Central', 'Oposto', 'Libero'] }
           value={ position }
           setValue={ setPosition }
         />
@@ -70,6 +68,7 @@ const App = () => {
         />
         <Button name={ 'Pronto' } />
       </form>
+      <div>{ name }{ email }{ phone }{ select }{ terms }{ position }</div>
     </>
   );
 }

@@ -1,28 +1,25 @@
 import StyledCheckbox from "./style"
 
-const Checkbox = ({ name, value, setValue }) => {
+const Checkbox = ({ value, setValue }) => {
+
+    const positions = ['Levantador', 'Ponteiro', 'Central', 'Oposto', 'Libero']
 
     const handleChange = ({target}) => {
         if(target.checked){
-            setValue([...name, target.value])
+            setValue([...value, target.value])
         } else {
             setValue(value.filter((prop) => (prop !== target.value)))
         }
     }
 
-    const checkedFun = () => {
-        value.includes(name)
-    }
-
     return (
         <StyledCheckbox>
-            {name.map((name, index) => (
+            {positions.map((name, index) => (
                 <label key={ index }>
                     <input
-                        key={ index }
                         type="checkbox" 
                         value={ name } 
-                        checked={ checkedFun } 
+                        checked={ value.includes(name) } 
                         onChange={ handleChange } 
                     />
                     { name }
